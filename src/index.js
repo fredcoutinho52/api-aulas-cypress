@@ -10,9 +10,7 @@ app.get("/formulario", (request, response) => {
     const data = request.body;
     
     Object.entries(data).forEach(item => {
-        if (!item[1]) {
-            response.json({ message: "Formulário incompleto" });
-        }
+        if (!item[1]) response.json({ message: "Formulário incompleto" });
     });
 
     response.json({ message: "Formulário enviado com sucesso" });
